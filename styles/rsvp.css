@@ -1,0 +1,103 @@
+.rsvp{
+  width: 100%;
+  background:#FFF8F2;
+
+  padding:120px 20px;
+
+  text-align:center;
+}
+
+.rsvp h2{
+
+  color:#7A1E2C;
+
+  font-size:56px;
+
+  font-family:"Cormorant Garamond";
+}
+
+.subtitle{
+
+  margin:20px auto 50px;
+
+  max-width:600px;
+
+  color:#666;
+}
+
+form{
+
+  max-width:600px;
+
+  margin:auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:20px;
+}
+
+input,
+select,
+textarea{
+
+  padding:16px;
+
+  border:1px solid #E7D8D8;
+
+  border-radius:12px;
+
+  background:white;
+
+  font-size:16px;
+}
+
+textarea{
+
+  min-height:140px;
+
+  resize:none;
+}
+
+.meal{
+
+  display:flex;
+
+  justify-content:space-around;
+
+  flex-wrap:wrap;
+}
+
+.checkbox{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+button{
+
+  background:#7A1E2C;
+
+  color:white;
+
+  border:none;
+
+  padding:16px;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  transition:.3s;
+}
+
+button:hover{
+
+  background:#C98A8A;
+}

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3A2B1A;
 }
 
 @theme inline {
@@ -15,12 +15,76 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #3A2B1A;
   }
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  min-height: 100%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #f8e8e3 0%,
+      #e4c5c8 45%,
+      #b58e9b 100%
+    );
+
+  background-attachment: fixed;
+
+  /* background:
+    radial-gradient(
+      circle at 50% 0%,
+      #fff8f2 0%,
+      #f6ddd8 30%,
+      #e7c3c7 60%,
+      #b98c98 100%
+    );
+
+  background-attachment: fixed; */
+}
+
+.wedding-app {
+  width: 100%;
+  max-width: 36rem; /* 576px */
+
+  min-height: 100vh;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  background: #fff8f2;
+
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
 }

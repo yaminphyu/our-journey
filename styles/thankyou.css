@@ -1,0 +1,54 @@
+.thank-you {
+  width: 100%;
+  min-height: 100vh;
+  background: #FFF8F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.flowers {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.thank-you h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  color: #7A1E2C;
+}
+
+.message {
+  max-width: 650px;
+  margin-top: 30px;
+  line-height: 2;
+  color: #666;
+  font-size: 18px;
+}
+
+.heart {
+  margin: 40px 0;
+  font-size: 36px;
+}
+
+.footer-message {
+  color: #8B5A5A;
+  font-size: 18px;
+}
+
+.couple {
+  margin-top: 40px;
+  font-family: "Great Vibes", cursive;
+  font-size: 52px;
+  color: #7A1E2C;
+}
+
+.date {
+  margin-top: 15px;
+  letter-spacing: 6px;
+  color: #C98A8A;
+  font-size: 16px;
+}

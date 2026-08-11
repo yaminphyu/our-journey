@@ -1,0 +1,69 @@
+.welcome {
+  width: 100%;
+  min-height:100vh;
+
+  background:#FFF8F2;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:80px 20px;
+
+  position:relative;
+}
+
+.welcome-flower{
+
+  font-size:55px;
+
+  margin-bottom:30px;
+}
+
+.welcome-guest{
+
+  font-size:22px;
+
+  color:#7A1E2C;
+
+  letter-spacing:2px;
+}
+
+.welcome-title{
+
+  margin-top:15px;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:60px;
+
+  color:#7A1E2C;
+}
+
+.welcome-message{
+
+  margin-top:35px;
+
+  max-width:650px;
+
+  line-height:2;
+
+  color:#666;
+
+  font-size:20px;
+}
+
+.welcome-footer{
+
+  margin-top:35px;
+
+  color:#A56C6C;
+
+  font-size:18px;
+}

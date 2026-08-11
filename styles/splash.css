@@ -1,0 +1,70 @@
+.splash {
+  position: fixed;
+  inset: 0;
+
+  /* background: radial-gradient(circle, #fffdf8 0%, #fff8f2 100%); */
+  background-image: url("/images/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+  /* max-width: 500px; */
+}
+
+.couple-name {
+  font-size: 72px;
+  color: #7a1e2c;
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #7a1e2c;
+  margin-bottom: 10px;
+}
+
+.invite {
+  color: #8c6f6f;
+  margin-bottom: 40px;
+}
+
+.open-btn {
+  padding: 15px 40px;
+
+  border-radius: 50px;
+
+  border: none;
+
+  background: #7a1e2c;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  transition: .3s;
+}
+
+.open-btn:hover {
+  background: #c98a8a;
+}
+
+.petal {
+  position: absolute;
+
+  font-size: 28px;
+
+  top: -50px;
+
+  pointer-events: none;
+
+  user-select: none;
+}

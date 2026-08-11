@@ -1,0 +1,185 @@
+.petal{
+
+  position:absolute;
+
+  top:-80px;
+
+  pointer-events:none;
+
+  user-select:none;
+
+  z-index:1;
+}
+
+.hero-content{
+
+  position:relative;
+
+  z-index:3;
+}
+
+.hero {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+      linear-gradient(rgba(255,248,242,.45),
+      rgba(255,248,242,.45)),
+      url("/images/splash.png");
+  /* background:
+      linear-gradient(rgba(255,248,242,.75),
+      rgba(255,248,242,.75)),
+      url("/images/hero.png"); */
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:
+      radial-gradient(circle,
+      transparent,
+      rgba(0,0,0,.08));
+}
+
+.hero-content{
+
+  position:relative;
+
+  text-align:center;
+
+  z-index:2;
+
+  max-width:700px;
+
+  padding:20px;
+}
+
+.hero-subtitle{
+
+  color:#7A1E2C;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  font-size:14px;
+}
+
+.hero-title{
+
+  font-family:"Great Vibes",cursive;
+
+  font-size:90px;
+
+  color:#7A1E2C;
+
+  margin:20px 0;
+}
+
+.hero-title span{
+
+  display:block;
+
+  font-size:70px;
+
+  color:#C98A8A;
+
+  margin:10px 0;
+}
+
+.hero-date{
+
+  color:#8B5A5A;
+
+  font-size:28px;
+
+  font-family:"Cormorant Garamond";
+}
+
+.hero-description{
+
+  margin-top:30px;
+
+  color:#555;
+
+  line-height:1.8;
+
+  font-size:18px;
+}
+
+.hero-button{
+
+  margin-top:40px;
+
+  padding:16px 42px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:#7A1E2C;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  transition:.3s;
+}
+
+.hero-button:hover{
+
+  background:#C98A8A;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 50px;
+  color: #7A1E2C;
+
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.scroll:hover {
+  color: #C98A8A;
+}
+
+.flower-left{
+
+  position:absolute;
+
+  left:0;
+
+  top:0;
+
+  width:260px;
+}
+
+.flower-right{
+
+  position:absolute;
+
+  right:0;
+
+  bottom:0;
+
+  width:260px;
+}

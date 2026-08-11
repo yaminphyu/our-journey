@@ -1,0 +1,26 @@
+.music-btn{
+
+  position:fixed;
+
+  right:25px;
+
+  bottom:25px;
+
+  width:55px;
+
+  height:55px;
+
+  border-radius:50%;
+
+  border:none;
+
+  background:#7A1E2C;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:22px;
+
+  z-index:999;
+}

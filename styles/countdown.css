@@ -1,0 +1,89 @@
+.countdown{
+  width: 100%;
+  padding:120px 20px;
+
+  background:#FFF8F2;
+
+  text-align:center;
+}
+
+.countdown-subtitle{
+
+  letter-spacing:3px;
+
+  color:#7A1E2C;
+
+  text-transform:uppercase;
+
+  font-size:14px;
+}
+
+.countdown-title{
+
+  margin-top:15px;
+
+  font-size:52px;
+
+  color:#7A1E2C;
+
+  font-family:"Cormorant Garamond", serif;
+}
+
+.countdown-wrapper{
+
+  margin-top:60px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:16px;
+
+  flex-wrap:wrap;
+}
+
+.time-card{
+
+  width:20%;
+
+  height:100px;
+
+  border-radius:20px;
+
+  background:white;
+
+  box-shadow:0 15px 40px rgba(122,30,44,.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  transition:.3s;
+}
+
+.time-card:hover{
+
+  transform:translateY(-8px);
+}
+
+.time-number{
+
+  font-size:20px;
+
+  color:#7A1E2C;
+
+  font-weight:700;
+}
+
+.time-label{
+
+  margin-top:10px;
+
+  color:#C98A8A;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
