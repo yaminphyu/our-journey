@@ -4,9 +4,7 @@ import { motion } from "framer-motion";
 export default function RSVP() {
   const [form, setForm] = useState({
     name: "",
-    phone: "",
     guests: 1,
-    meal: "Chicken",
     message: "",
     attending: true,
   });
@@ -59,14 +57,6 @@ export default function RSVP() {
           required
         />
 
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-        />
-
         <select
           name="guests"
           value={form.guests}
@@ -76,43 +66,6 @@ export default function RSVP() {
             <option key={n}>{n}</option>
           ))}
         </select>
-
-        <div className="meal">
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Chicken"
-              checked={form.meal==="Chicken"}
-              onChange={handleChange}
-            />
-            Chicken
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Beef"
-              checked={form.meal==="Beef"}
-              onChange={handleChange}
-            />
-            Beef
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Vegetarian"
-              checked={form.meal==="Vegetarian"}
-              onChange={handleChange}
-            />
-            Vegetarian
-          </label>
-
-        </div>
 
         <textarea
           placeholder="Leave us a lovely message..."

@@ -1,11 +1,12 @@
+import { getStorageData } from "@/hooks/Commom";
 import { motion } from "framer-motion";
 
 export default function Welcome({
   guestName = "guest",
   partnerName = "",
 }) {
-  const updatedGuestName = guestName || localStorage.getItem("name") || "guest";
-  const updatedPartnerName = partnerName || localStorage.getItem("partner") || "";
+  const updatedGuestName = guestName || getStorageData("name") || "guest";
+  const updatedPartnerName = partnerName || getStorageData("partner") || "";
   
   return (
     <section className="welcome" id="welcome">
