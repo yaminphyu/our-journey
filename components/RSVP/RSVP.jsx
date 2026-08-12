@@ -8,6 +8,7 @@ export default function RSVP() {
     message: "",
     attending: true,
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -18,14 +19,50 @@ export default function RSVP() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Thank you for your RSVP!");
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/rsvp", {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message);
+      }
+
+      alert("Thank you! Your RSVP has been submitted.");
+
+      setForm({
+        name: "",
+        guests: 1,
+        message: "",
+        attending: true,
+      });
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        error.message ||
+          "Failed to submit RSVP."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="rsvp">
+    <section className="rsvp" id="rsvp">
 
       <motion.h2
         initial={{ opacity: 0 }}
@@ -87,8 +124,13 @@ export default function RSVP() {
 
         </label>
 
-        <button>
-          Confirm Attendance
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading
+            ? "Submitting..."
+            : "Confirm Attendance"}
         </button>
 
       </form>

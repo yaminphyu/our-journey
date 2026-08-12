@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function ThankYou() {
   return (
-    <section className="thank-you">
+    <section className="thank-you" id="thank-you">
 
       {/* Floating Floral Decoration */}
       <motion.div

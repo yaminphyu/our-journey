@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
 
       <FloatingPetals />
       <div className="hero-overlay" />

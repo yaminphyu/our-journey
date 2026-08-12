@@ -23,7 +23,7 @@ const guyCodes = [
 
 export default function WeddingDetails() {
   return (
-    <section className="details">
+    <section className="details" id="details">
 
       <motion.h2
         initial={{ opacity: 0 }}
