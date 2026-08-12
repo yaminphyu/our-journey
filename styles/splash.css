@@ -2,11 +2,11 @@
   position: fixed;
   inset: 0;
 
-  /* background: radial-gradient(circle, #fffdf8 0%, #fff8f2 100%); */
-  background-image: url("/images/image.png");
+  background: radial-gradient(circle, #fffdf8 0%, #fff8f2 100%);
+  /* background-image: url("/images/image.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   display: flex;
   flex-direction: column;

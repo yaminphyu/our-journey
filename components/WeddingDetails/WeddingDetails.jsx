@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const ladyCodes = [
-  { code: "#430012", name: "Deep Burgundy" },
+  // { code: "#430012", name: "Deep Burgundy" },
   { code: "#6D001D", name: "Deep Red" },
   { code: "#666B33", name: "Olive Green" },
   { code: "#E0A6A5", name: "Blush Pink" },
@@ -23,7 +23,7 @@ const guyCodes = [
 
 export default function WeddingDetails() {
   return (
-    <section className="details">
+    <section className="details" id="details">
 
       <motion.h2
         initial={{ opacity: 0 }}
@@ -63,9 +63,7 @@ export default function WeddingDetails() {
 
           <p>5:30 PM</p>
 
-          <p>
-          Dawn to Dust
-          </p>
+          <p className="address">Dawn to Dusk</p>
 
           <a
             href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
@@ -74,26 +72,6 @@ export default function WeddingDetails() {
           >
             View Map
           </a>
-        </motion.div>
-
-        {/* Reception */}
-
-        <motion.div
-          className="detail-card"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: .2 }}
-          viewport={{ once: true }}
-        >
-          <div className="icon">🍽</div>
-
-          <h3>Reception</h3>
-
-          <p>5:30 PM</p>
-
-          <p>Grand Ballroom</p>
-
-          <p>Dinner & Celebration</p>
         </motion.div>
 
         {/* Dress Code */}

@@ -47,7 +47,7 @@ const schedule = [
 
 export default function Schedule() {
   return (
-    <section className="schedule">
+    <section className="schedule" id="schedule">
 
       <motion.h2
         initial={{ opacity: 0, y: 30 }}

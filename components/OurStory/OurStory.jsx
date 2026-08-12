@@ -33,7 +33,7 @@ const stories = [
 
 export default function OurStory() {
   return (
-    <section className="story">
+    <section className="story" id="story">
 
       <motion.h2
         initial={{ opacity: 0 }}

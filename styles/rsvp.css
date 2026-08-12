@@ -1,4 +1,308 @@
-.rsvp{
+.rsvp {
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #fff8f2;
+
+  padding: 100px 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.rsvp h2 {
+  margin: 0;
+
+  color: #7a1e2c;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 8vw, 56px);
+  line-height: 1.1;
+}
+
+.rsvp .subtitle {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 20px auto 50px;
+
+  color: #666;
+
+  font-size: clamp(16px, 3.5vw, 20px);
+  line-height: 1.6;
+}
+
+/* Form */
+
+.rsvp form {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+/* Inputs */
+
+.rsvp input[type="text"],
+.rsvp input[type="tel"],
+.rsvp select,
+.rsvp textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 16px 18px;
+
+  border: 1px solid #e7d8d8;
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  color: #333;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.rsvp input[type="text"]:focus,
+.rsvp input[type="tel"]:focus,
+.rsvp select:focus,
+.rsvp textarea:focus {
+  border-color: #c98a8a;
+
+  box-shadow: 0 0 0 3px rgba(201, 138, 138, 0.12);
+}
+
+.rsvp input::placeholder,
+.rsvp textarea::placeholder {
+  color: #999;
+}
+
+/* Select */
+
+.rsvp select {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+/* Message */
+
+.rsvp textarea {
+  min-height: 150px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+/* Meal */
+
+.rsvp .meal {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  align-items: center;
+
+  padding: 5px 0;
+}
+
+.rsvp .meal label {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #333;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.rsvp .meal input[type="radio"] {
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  accent-color: #7a1e2c;
+
+  cursor: pointer;
+}
+
+/* Attending */
+
+.rsvp .checkbox {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  color: #333;
+
+  font-size: 17px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.rsvp .checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  flex-shrink: 0;
+
+  accent-color: #7a1e2c;
+
+  cursor: pointer;
+}
+
+/* Button */
+
+.rsvp button {
+  width: 100%;
+
+  padding: 17px 20px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: #7a1e2c;
+
+  color: white;
+
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.rsvp button:hover {
+  background: #c98a8a;
+}
+
+.rsvp button:active {
+  transform: scale(0.98);
+}
+
+/* -------------------------
+   Tablet
+------------------------- */
+
+@media (max-width: 768px) {
+  .rsvp {
+    padding: 80px 20px;
+  }
+
+  .rsvp .subtitle {
+    margin-bottom: 40px;
+  }
+
+  .rsvp form {
+    max-width: 100%;
+  }
+}
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 480px) {
+  .rsvp {
+    padding: 70px 16px;
+  }
+
+  .rsvp h2 {
+    font-size: 44px;
+  }
+
+  .rsvp .subtitle {
+    margin-top: 15px;
+    margin-bottom: 35px;
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .rsvp form {
+    gap: 16px;
+  }
+
+  .rsvp input[type="text"],
+  .rsvp input[type="tel"],
+  .rsvp select,
+  .rsvp textarea {
+    padding: 15px;
+
+    font-size: 16px;
+
+    border-radius: 12px;
+  }
+
+  .rsvp textarea {
+    min-height: 130px;
+  }
+
+  /* Meal options become easier to fit */
+  .rsvp .meal {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    padding: 5px 0;
+  }
+
+  .rsvp .meal label {
+    justify-content: flex-start;
+
+    padding-left: 10px;
+  }
+
+  .rsvp .checkbox {
+    font-size: 16px;
+  }
+
+  .rsvp button {
+    padding: 16px;
+
+    font-size: 16px;
+  }
+}
+
+/* .rsvp{
   width: 100%;
   background:#FFF8F2;
 
@@ -100,4 +404,4 @@ button{
 button:hover{
 
   background:#C98A8A;
-}
+} */

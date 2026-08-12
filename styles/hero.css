@@ -32,11 +32,11 @@
   background:
       linear-gradient(rgba(255,248,242,.45),
       rgba(255,248,242,.45)),
-      url("/images/splash.png");
-  /* background:
-      linear-gradient(rgba(255,248,242,.75),
-      rgba(255,248,242,.75)),
-      url("/images/hero.png"); */
+      url("/images/image.png");
+      /* background:
+      linear-gradient(rgba(255,248,242,.45),
+      rgba(255,248,242,.45)),
+      url("/images/splash.png"); */
 
   background-size: cover;
   background-position: center;
@@ -182,4 +182,29 @@
   bottom:0;
 
   width:260px;
+}
+
+@media screen and (max-width: 600px) {
+  
+  .scroll{
+    font-size: 40px;
+  }
+
+  .hero-title {
+
+    font-size: 70px;
+  }
+
+  .hero-title span {
+    font-size: 50px;
+  }
+
+  .hero-date {
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    
+    font-size: 16px;
+  }
 }
