@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Map, MapPinned, PartyPopper, Shirt } from "lucide-react";
 
 const ladyCodes = [
   // { code: "#430012", name: "Deep Burgundy" },
@@ -53,7 +54,9 @@ export default function WeddingDetails() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="icon">💒</div>
+          <div className="icon flex justify-center items-center">
+            <PartyPopper size={32} color="#7A1E2C" />
+          </div>
 
           <h3>Ceremony</h3>
 
@@ -65,16 +68,31 @@ export default function WeddingDetails() {
 
           <p className="address">Dawn to Dusk</p>
 
-          <a
-            href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
-            target="_blank"
-            rel="noreferrer"
-          >
-            View Map
-          </a>
-        </motion.div>
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <a
+              href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View location on Google Maps"
+              className="flex items-center justify-center"
+            >
+              <Map
+                size={24}
+                color="#7A1E2C"
+                className="cursor-pointer transition-transform hover:scale-110"
+              />
+            </a>
 
-        {/* Dress Code */}
+            <a
+              href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#7A1E2C] font-medium text-lg"
+            >
+              View Map
+            </a>
+          </div>
+        </motion.div>
 
         <motion.div
           className="detail-card"
@@ -83,7 +101,12 @@ export default function WeddingDetails() {
           transition={{ delay: .4 }}
           viewport={{ once: true }}
         >
-          <div className="icon">👔</div>
+          <div className="icon flex justify-center items-center">
+            <Shirt
+              size={32}
+              color="#7A1E2C"
+            />
+          </div>
 
           <h3>Dress Code</h3>
 

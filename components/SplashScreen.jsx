@@ -1,5 +1,14 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import {
+  Heart,
+  CalendarDays,
+  MapPin,
+  Camera,
+  Music2,
+  Mail,
+  ArrowUp,
+} from "lucide-react";
 
 const petals = [
   {
@@ -112,8 +121,11 @@ export default function SplashScreen({ onOpen }) {
             transition={{
               duration: 1.2,
             }}
+            className="flex justify-center items-center"
           >
-            <h1 className="couple-name">Oak ♥ Yamin</h1>
+            <h1 className="couple-name">Oak</h1>
+            <Heart size={44} color="#7A1E2C" fill="#7A1E2C" className="mx-3 mb-8" />
+            <h1 className="couple-name">Yamin</h1>
           </motion.div>
 
           <motion.p

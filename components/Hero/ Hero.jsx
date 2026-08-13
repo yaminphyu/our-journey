@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
 
-      <FloatingPetals />
+      {/* <FloatingPetals /> */}
       <div className="hero-overlay" />
 
       <div className="hero-content">
@@ -68,9 +68,7 @@ export default function Hero() {
               delay: .8
             }}
           >
-            Together with our families,
-            we invite you to celebrate
-            the beginning of our forever.
+            Welcome to the new chapter of our life.
           </motion.p>
 
         </motion.div>
