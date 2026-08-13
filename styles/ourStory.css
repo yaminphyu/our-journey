@@ -1,93 +1,63 @@
 .story {
   width: 100%;
   background:#FFF8F2;
-
   padding:120px 20px;
   /* overflow-x: hidden; */
 }
 
 .story h2{
-
   text-align:center;
-
   font-size:56px;
-
   color:#7A1E2C;
-
   font-family:"Cormorant Garamond";
 }
 
 .story-subtitle{
-
   text-align:center;
-
   margin-top:15px;
-
   color:#8B5A5A;
-
   margin-bottom:80px;
 }
 
 .timeline{
-
   max-width:1100px;
-
   margin:auto;
-
   position:relative;
 }
 
 .timeline::before{
-
   content:"";
-
   position:absolute;
-
   left:50%;
-
   width:2px;
-
   background:#C98A8A;
-
   top:0;
-
   bottom:0;
 }
 
 .timeline-item{
-
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   margin-bottom:120px;
-
   gap:50px;
 }
 
 .timeline-item.left{
-
   flex-direction:row;
 }
 
 .timeline-item.right{
-
   flex-direction:row-reverse;
 }
 
 .timeline-image{
-
   width:45%;
 }
 
 .timeline-image img{
-
   width:100%;
-
   border-radius:20px;
-
   box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
@@ -104,38 +74,32 @@
 }
 
 .timeline-content h3{
-
   color:#7A1E2C;
-
   margin:15px 0;
 }
 
 .timeline-content p{
-
   color:#666;
-
   line-height:1.8;
 }
 
 @media(max-width:768px){
+  .timeline::before{
+    left:20px;
+  }
 
-.timeline::before{
+  .timeline-item{
+    flex-direction:column!important;
+    padding-left:50px;
+  }
 
-  left:20px;
-}
+  .timeline-image,
+  .timeline-content{
+    width:100%;
+  }
 
-.timeline-item{
-
-  flex-direction:column!important;
-
-  padding-left:50px;
-}
-
-.timeline-image,
-
-.timeline-content{
-
-  width:100%;
-}
+  .story h2 {
+    font-size:42px;
+  }
 
 }

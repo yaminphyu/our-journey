@@ -106,3 +106,10 @@
 
   border-radius:50%;
 }
+
+@media(max-width:768px){
+  .details h2{
+    font-size:42px;
+  }
+  
+}

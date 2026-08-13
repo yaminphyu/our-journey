@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Heart } from "lucide-react";
 
 export default function ThankYou() {
   return (
@@ -6,7 +7,7 @@ export default function ThankYou() {
 
       {/* Floating Floral Decoration */}
       <motion.div
-        className="flowers"
+        className="flowers flex justify-center items-center gap-4"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -33,11 +34,9 @@ export default function ThankYou() {
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        Thank you for being part of our love story.
+        Thank you for being with us this far.
         <br />
-        Your love, prayers, and presence
-        <br />
-        mean the world to us.
+        See you on October 30th.
       </motion.p>
 
       <motion.div
@@ -50,7 +49,9 @@ export default function ThankYou() {
           duration: 2,
         }}
       >
-        ❤️
+
+        <Heart size={44} color="#7A1E2C" fill="#7A1E2C" className="mx-3 mb-8" />
+        {/* ❤️ */}
       </motion.div>
 
       <motion.p
@@ -60,7 +61,7 @@ export default function ThankYou() {
         viewport={{ once: true }}
         transition={{ delay: 0.8 }}
       >
-        We can't wait to celebrate with you.
+        With love,
       </motion.p>
 
       <motion.h3
