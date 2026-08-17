@@ -1,63 +1,71 @@
 import fs from "fs";
 import path from "path";
 import * as XLSX from "xlsx";
+// import FormData from "form-data";
 
-const filePath = path.join(process.cwd(), "data", "rsvp.xlsx");
+const filePath = path.join(process.cwd(), "data", "guest-wishes.xlsx");
+
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 function ensureFileExists() {
   const dataDirectory = path.join(process.cwd(), "data");
-
   if (!fs.existsSync(dataDirectory)) {
     fs.mkdirSync(dataDirectory, { recursive: true });
   }
-
   if (!fs.existsSync(filePath)) {
     const workbook = XLSX.utils.book_new();
-
     const worksheet = XLSX.utils.json_to_sheet([]);
-
-    XLSX.utils.book_append_sheet(
-      workbook,
-      worksheet,
-      "RSVP"
-    );
-
+    XLSX.utils.book_append_sheet(workbook, worksheet, "RSVP");
     XLSX.writeFile(workbook, filePath);
   }
+}
+
+async function sendFileToTelegram(guestName) {
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    console.error("Telegram env vars missing");
+    return;
+  }
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendDocument`;
+
+  const fileBuffer = fs.readFileSync(filePath);
+  const fileBlob = new Blob([fileBuffer], {
+    type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  });
+
+  const form = new FormData();
+  form.append("chat_id", TELEGRAM_CHAT_ID);
+  form.append("document", fileBlob, "guest-wishes.xlsx");
+  form.append("caption", `${guestName} — New RSVP received ✅`);
+
+  const response = await fetch(url, {
+    method: "POST",
+    body: form,
+  });
+
+  const result = await response.json();
+  if (!result.ok) {
+    console.error("Telegram send failed:", result);
+  } else {
+    console.log("Telegram send success");
+  }
+  return result;
 }
 
 export default function handler(req, res) {
   try {
     ensureFileExists();
 
-    // =========================
-    // GET RSVP
-    // =========================
-
     if (req.method === "GET") {
       const workbook = XLSX.readFile(filePath);
-
       const worksheet = workbook.Sheets["RSVP"];
-
       const data = XLSX.utils.sheet_to_json(worksheet);
-
-      return res.status(200).json({
-        success: true,
-        data,
-      });
+      return res.status(200).json({ success: true, data });
     }
 
-    // =========================
-    // POST RSVP
-    // =========================
-
     if (req.method === "POST") {
-      const {
-        name,
-        guests,
-        message,
-        attending,
-      } = req.body;
+      const { name, guests, message, attending } = req.body;
 
       if (!name) {
         return res.status(400).json({
@@ -67,38 +75,27 @@ export default function handler(req, res) {
       }
 
       const workbook = XLSX.readFile(filePath);
-
       const worksheet = workbook.Sheets["RSVP"];
-
-      const existingData = XLSX.utils.sheet_to_json(
-        worksheet
-      );
+      const existingData = XLSX.utils.sheet_to_json(worksheet);
 
       const newRSVP = {
-        id: Date.now(),
-
+        ID: Date.now(),
         name,
-
-        guests: guests || 1,
-
-        message: message || "",
-
         attending: attending ? "Yes" : "No",
-
+        guests: attending ? guests : 0,
+        message: message || "",
         createdAt: new Date().toISOString(),
       };
-
-      const updatedData = [
-        ...existingData,
-        newRSVP,
-      ];
-
-      const newWorksheet =
-        XLSX.utils.json_to_sheet(updatedData);
-
+      
+      const updatedData = [...existingData, newRSVP];
+      const newWorksheet = XLSX.utils.json_to_sheet(updatedData);
       workbook.Sheets["RSVP"] = newWorksheet;
-
       XLSX.writeFile(workbook, filePath);
+
+      // Fire off to Telegram (don't block the response on failure)
+      sendFileToTelegram(newRSVP?.name).catch((err) =>
+        console.error("Telegram error:", err)
+      );
 
       return res.status(201).json({
         success: true,
@@ -113,7 +110,6 @@ export default function handler(req, res) {
     });
   } catch (error) {
     console.error(error);
-
     return res.status(500).json({
       success: false,
       message: "Something went wrong",

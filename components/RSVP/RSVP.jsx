@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -9,40 +10,43 @@ export default function RSVP() {
     attending: true,
   });
   const [loading, setLoading] = useState(false);
-
+  const [status, setStatus] = useState(null); // { type: "success" | "error", text: string }
+ 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
+ 
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+ 
     setLoading(true);
-
+    setStatus(null);
+ 
     try {
       const response = await fetch("/api/rsvp", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(form),
       });
-
+ 
       const result = await response.json();
-
+ 
       if (!response.ok) {
         throw new Error(result.message);
       }
-
-      alert("Thank you! Your RSVP has been submitted.");
-
+ 
+      setStatus({
+        type: "success",
+        text: "Thank you — your RSVP has been received.",
+      });
+ 
       setForm({
         name: "",
         guests: 1,
@@ -51,11 +55,10 @@ export default function RSVP() {
       });
     } catch (error) {
       console.error(error);
-
-      alert(
-        error.message ||
-          "Failed to submit RSVP."
-      );
+      setStatus({
+        type: "error",
+        text: error.message || "Something went wrong. Please try again.",
+      });
     } finally {
       setLoading(false);
     }
@@ -132,6 +135,14 @@ export default function RSVP() {
             ? "Submitting..."
             : "Confirm Attendance"}
         </button>
+
+        {status && (
+          <p
+            className={status.type === "success" ? "success" : "error"}
+          >
+            {status.text}
+          </p>
+        )}
 
       </form>
 
