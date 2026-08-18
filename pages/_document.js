@@ -17,11 +17,19 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <link
-          rel="preload"
-          as="image"
-          href="/images/splash.png"
-        />
+        <link rel="preload" as="image" href="/images/splash.png" />
+        <link rel="preload" as="image" href="/images/gallery/first-1.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/first-2.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/first-3.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/first-4.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/second-1.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/second-2.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/second-3.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/second-4.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/third-1.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/third-2.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/third-3.jpg" />
+        <link rel="preload" as="image" href="/images/gallery/third-4.jpg" />
       </Head>
 
       <body>

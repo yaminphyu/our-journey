@@ -11,6 +11,7 @@ import "../styles/schedule.css";
 import "../styles/rsvp.css";
 import "../styles/thankyou.css";
 import "../styles/floatingNav.css";
+import "../styles/gallery.css";
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
