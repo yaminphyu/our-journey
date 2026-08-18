@@ -64,7 +64,7 @@ export default function WeddingDetails() {
 
           <p>October 30, 2026</p>
 
-          <p>5:30 PM</p>
+          <p>5:00 PM</p>
 
           <p className="address">Dawn to Dusk</p>
 

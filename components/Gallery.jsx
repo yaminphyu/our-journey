@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const photos = [
   // first dress
@@ -132,12 +133,20 @@ export default function Gallery() {
             }}
             onClick={() => setSelectedPhoto(photo)}
           >
-            <img
+            {/* <img
               src={photo.src}
               alt={photo.alt}
               loading={index < 2 ? "eager" : "lazy"}
-            />
+            /> */}
 
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 768px) 50vw, 250px"
+              className="gallery-image"
+              loading={index < 2 ? "eager" : "lazy"}
+            />
             <div className="gallery-overlay">
               <span>♡</span>
             </div>
