@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import * as XLSX from "xlsx";
-// import FormData from "form-data";
+import FormData from "form-data";
 
-const filePath = path.join(process.cwd(), "data", "guest-wishes.xlsx");
+// const filePath = path.join(process.cwd(), "data", "guest-wishes.xlsx");
+const filePath = path.join("/tmp", "guest-wishes.xlsx");
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
