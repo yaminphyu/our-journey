@@ -10,6 +10,7 @@ import WeddingDetails from "@/components/WeddingDetails/WeddingDetails";
 import Welcome from "@/components/Welcome/Welcome";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Gallery from "@/components/Gallery";
 
 export default function Home({
   guestName = "guest",
@@ -47,6 +48,7 @@ export default function Home({
       <Countdown />
       <OurStory />
       <WeddingDetails />
+      <Gallery />
       <Schedule />
       <RSVP />
       <ThankYou />

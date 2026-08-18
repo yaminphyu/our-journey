@@ -1,0 +1,326 @@
+.gallery {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 100px 20px 120px;
+
+  background: #fff8f2;
+
+  overflow: hidden;
+}
+
+.gallery-header {
+  text-align: center;
+
+  max-width: 650px;
+
+  margin: 0 auto 60px;
+}
+
+.gallery-flower {
+  margin-bottom: 15px;
+
+  color: #c98a8a;
+
+  font-size: 32px;
+
+  line-height: 1;
+}
+
+.gallery-subtitle {
+  margin: 0 0 10px;
+
+  color: #c98a8a;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.gallery-header h2 {
+  margin: 0;
+
+  color: #7a1e2c;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 7vw, 58px);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+.gallery-description {
+  max-width: 500px;
+
+  margin: 20px auto 0;
+
+  color: #777;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.gallery-grid {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: 180px;
+
+  gap: 14px;
+}
+
+/* Photo */
+
+.gallery-item {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background: #ead8d6;
+
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Different sizes */
+
+.gallery-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-medium {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.gallery-small {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Hover overlay */
+
+.gallery-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(122, 30, 44, 0);
+
+  transition: background 0.3s ease;
+}
+
+.gallery-overlay span {
+  opacity: 0;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 248, 242, 0.9);
+
+  color: #7a1e2c;
+
+  font-size: 24px;
+
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  background: rgba(122, 30, 44, 0.18);
+}
+
+.gallery-item:hover .gallery-overlay span {
+  opacity: 1;
+}
+
+.gallery-lightbox {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  padding: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(40, 20, 25, 0.88);
+
+  backdrop-filter: blur(8px);
+}
+
+.gallery-lightbox-content {
+  position: relative;
+
+  max-width: 900px;
+  max-height: 90vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-lightbox-content img {
+  max-width: 100%;
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Close */
+
+.gallery-close {
+  position: absolute;
+
+  top: -45px;
+  right: 0;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 248, 242, 0.9);
+
+  color: #7a1e2c;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    padding: 75px 16px 90px;
+  }
+
+  .gallery-header {
+    margin-bottom: 40px;
+  }
+
+  .gallery-flower {
+    font-size: 28px;
+  }
+
+  .gallery-description {
+    font-size: 15px;
+
+    padding: 0 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 150px;
+
+    gap: 10px;
+  }
+
+  .gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .gallery-medium {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .gallery-small {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery-item {
+    border-radius: 14px;
+  }
+
+  .gallery-overlay {
+    display: none;
+  }
+
+  .gallery-lightbox {
+    padding: 15px;
+  }
+
+  .gallery-lightbox-content {
+    width: 100%;
+  }
+
+  .gallery-lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+
+    border-radius: 10px;
+  }
+
+  .gallery-close {
+    top: -50px;
+    right: 0;
+  }
+}
