@@ -8,7 +8,6 @@ const menuItems = [
   { id: "details", label: "Details", icon: "💍" },
   { id: "gallery", label: "Gallery", icon: "📸" },
   { id: "schedule", label: "Schedule", icon: "🌸" },
-  { id: "location", label: "Location", icon: "📍" },
   { id: "rsvp", label: "RSVP", icon: "💌" },
 ];
 
