@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function RSVP() {
   const [form, setForm] = useState({
     name: "",
-    guests: 1,
+    guests: 0,
     message: "",
     attending: true,
   });
@@ -18,6 +18,7 @@ export default function RSVP() {
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
+      ...(name === "attending" && !checked ? { guests: 0 } : {}),
     }));
   };
  
@@ -49,7 +50,7 @@ export default function RSVP() {
  
       setForm({
         name: "",
-        guests: 1,
+        guests: 0,
         message: "",
         attending: true,
       });
@@ -102,6 +103,7 @@ export default function RSVP() {
           value={form.guests}
           onChange={handleChange}
         >
+          <option>How many guests</option>
           {[1,2,3,4,5].map(n => (
             <option key={n}>{n}</option>
           ))}
