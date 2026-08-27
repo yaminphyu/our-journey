@@ -52,10 +52,10 @@ export default function Countdown() {
   }, []);
 
   return (
-    <section className="countdown">
+    <section className="countdown" id="countdown">
 
       <h4 className="countdown-subtitle">
-        Counting Down
+        Count Down
       </h4>
 
       <h2 className="countdown-title">

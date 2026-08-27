@@ -2,11 +2,11 @@
   position: fixed;
   inset: 0;
 
-  /* background: radial-gradient(circle, #fffdf8 0%, #fff8f2 100%); */
-  background-image: url("/images/image.png");
+  background: radial-gradient(circle, #fffdf8 0%, #fff8f2 100%);
+  /* background-image: url("/images/image.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   display: flex;
   flex-direction: column;
@@ -67,4 +67,16 @@
   pointer-events: none;
 
   user-select: none;
+}
+
+@media screen and (max-width: 600px) {
+  .couple-name {
+    font-size: 52px;
+  }
+
+  .subtitle,
+  .invite,
+  .open-btn {
+    font-size: 16px;
+  }
 }

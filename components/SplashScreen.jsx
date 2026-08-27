@@ -1,7 +1,77 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import {
+  Heart,
+  CalendarDays,
+  MapPin,
+  Camera,
+  Music2,
+  Mail,
+  ArrowUp,
+} from "lucide-react";
 
-const petals = [...Array(10)];
+const petals = [
+  {
+    left: "8%",
+    x: -20,
+    duration: 10,
+    delay: 0,
+  },
+  {
+    left: "18%",
+    x: 30,
+    duration: 12,
+    delay: 2,
+  },
+  {
+    left: "30%",
+    x: -15,
+    duration: 9,
+    delay: 4,
+  },
+  {
+    left: "42%",
+    x: 25,
+    duration: 13,
+    delay: 1,
+  },
+  {
+    left: "55%",
+    x: -30,
+    duration: 11,
+    delay: 3,
+  },
+  {
+    left: "67%",
+    x: 20,
+    duration: 10,
+    delay: 5,
+  },
+  {
+    left: "78%",
+    x: -25,
+    duration: 14,
+    delay: 2,
+  },
+  {
+    left: "88%",
+    x: 15,
+    duration: 9,
+    delay: 4,
+  },
+  {
+    left: "95%",
+    x: -20,
+    duration: 12,
+    delay: 1,
+  },
+  {
+    left: "50%",
+    x: 30,
+    duration: 11,
+    delay: 6,
+  },
+];
 
 export default function SplashScreen({ onOpen }) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -22,22 +92,22 @@ export default function SplashScreen({ onOpen }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {petals.map((_, i) => (
+          {petals.map((petal, index) => (
             <motion.div
-              key={i}
+              key={index}
               className="petal"
               style={{
-                left: `${Math.random() * 100}%`,
+                left: petal.left,
               }}
               animate={{
                 y: ["-10vh", "110vh"],
-                x: [0, Math.random() * 80 - 40],
+                x: [0, petal.x],
                 rotate: [0, 360],
               }}
               transition={{
-                duration: 8 + Math.random() * 6,
+                duration: petal.duration,
                 repeat: Infinity,
-                delay: Math.random() * 5,
+                delay: petal.delay,
                 ease: "linear",
               }}
             >
@@ -51,8 +121,11 @@ export default function SplashScreen({ onOpen }) {
             transition={{
               duration: 1.2,
             }}
+            className="flex justify-center items-center"
           >
-            <h1 className="couple-name">Oak ♥ Yamin</h1>
+            <h1 className="couple-name">Oak</h1>
+            <Heart size={44} color="#7A1E2C" fill="#7A1E2C" className="mx-3 mb-8" />
+            <h1 className="couple-name">Yamin</h1>
           </motion.div>
 
           <motion.p

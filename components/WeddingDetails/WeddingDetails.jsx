@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { Map, MapPinned, PartyPopper, Shirt } from "lucide-react";
 
 const ladyCodes = [
-  { code: "#430012", name: "Deep Burgundy" },
+  // { code: "#430012", name: "Deep Burgundy" },
   { code: "#6D001D", name: "Deep Red" },
   { code: "#666B33", name: "Olive Green" },
   { code: "#E0A6A5", name: "Blush Pink" },
@@ -23,7 +24,7 @@ const guyCodes = [
 
 export default function WeddingDetails() {
   return (
-    <section className="details">
+    <section className="details" id="details">
 
       <motion.h2
         initial={{ opacity: 0 }}
@@ -53,7 +54,9 @@ export default function WeddingDetails() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="icon">💒</div>
+          <div className="icon flex justify-center items-center">
+            <PartyPopper size={32} color="#7A1E2C" />
+          </div>
 
           <h3>Ceremony</h3>
 
@@ -61,42 +64,35 @@ export default function WeddingDetails() {
 
           <p>October 30, 2026</p>
 
-          <p>5:30 PM</p>
+          <p>5:00 PM</p>
 
-          <p>
-          Dawn to Dust
-          </p>
+          <p className="address">Dawn to Dusk</p>
 
-          <a
-            href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
-            target="_blank"
-            rel="noreferrer"
-          >
-            View Map
-          </a>
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <a
+              href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View location on Google Maps"
+              className="flex items-center justify-center"
+            >
+              <Map
+                size={24}
+                color="#7A1E2C"
+                className="cursor-pointer transition-transform hover:scale-110"
+              />
+            </a>
+
+            <a
+              href="https://maps.app.goo.gl/N5ovg37wdc8WcbHTA"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#7A1E2C] font-medium text-lg"
+            >
+              View Map
+            </a>
+          </div>
         </motion.div>
-
-        {/* Reception */}
-
-        <motion.div
-          className="detail-card"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: .2 }}
-          viewport={{ once: true }}
-        >
-          <div className="icon">🍽</div>
-
-          <h3>Reception</h3>
-
-          <p>5:30 PM</p>
-
-          <p>Grand Ballroom</p>
-
-          <p>Dinner & Celebration</p>
-        </motion.div>
-
-        {/* Dress Code */}
 
         <motion.div
           className="detail-card"
@@ -105,7 +101,12 @@ export default function WeddingDetails() {
           transition={{ delay: .4 }}
           viewport={{ once: true }}
         >
-          <div className="icon">👔</div>
+          <div className="icon flex justify-center items-center">
+            <Shirt
+              size={32}
+              color="#7A1E2C"
+            />
+          </div>
 
           <h3>Dress Code</h3>
 

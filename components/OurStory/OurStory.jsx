@@ -6,34 +6,34 @@ const stories = [
     title: "First Meeting",
     image: "/images/our_story/first-meeting.png",
     description:
-      "Sometimes the most beautiful stories begin when you least expect them. Our paths crossed, and a simple hello became the start of something extraordinary.",
+      "Long, long ago, two souls met at 'Seoul K Noodle', just for a little meetup before a trip to Mandalay. Little did they know, how that distance would bring them closer, as that very trip gave them another excuse to meet again with souvenirs in hand",
   },
   {
     year: "2022",
     title: "First Date",
     image: "/images/our_story/first-date.png",
     description:
-      "Our first date was filled with laughter, long conversations, and a feeling that we had known each other forever.",
+      "Not-so-long after, the boy introduced the girl to his pack. That night, at midnight to be precise, two hearts finally admitted what they already knew that 'They were in love'",
   },
   {
     year: "2025",
     title: "The Proposal",
     image: "/images/our_story/proposal.png",
     description:
-      "One unforgettable moment, one heartfelt question, and one joyful 'Yes!' marked the beginning of our forever.",
+      "In Da Lat, Vietnam, where the mountains meet the clouds and nature makes peace with serenity, two hearts tied their strings a little tighter, promising to keep them attached for eternity",
   },
   {
     year: "2026",
     title: "Our Pre-wedding",
     image: "/images/our_story/pre-wedding.png",
     description:
-      "Now we can't wait to celebrate the next chapter of our journey with the people we love most.",
+      "Another trip to Da Nang, Vietnam, became another landmark along the way, tying those strings tighter and almost the tightest. They kept their memories in photographs, just like Ed Sheeran",
   },
 ];
 
 export default function OurStory() {
   return (
-    <section className="story">
+    <section className="story" id="story">
 
       <motion.h2
         initial={{ opacity: 0 }}
@@ -50,8 +50,7 @@ export default function OurStory() {
         transition={{ delay: .2 }}
         viewport={{ once: true }}
       >
-        Every love story is beautiful,
-        but ours is our favorite.
+        A quick walkthrough from 2022 to 2026.
       </motion.p>
 
       <div className="timeline">

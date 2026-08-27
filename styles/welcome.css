@@ -1,69 +1,108 @@
 .welcome {
   width: 100%;
-  min-height:100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
 
-  background:#FFF8F2;
+  background: #FFF8F2;
 
-  display:flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  flex-direction:column;
+  text-align: center;
 
-  justify-content:center;
+  padding: 80px 20px;
 
-  align-items:center;
-
-  text-align:center;
-
-  padding:80px 20px;
-
-  position:relative;
+  position: relative;
+  overflow: hidden;
 }
 
-.welcome-flower{
-
-  font-size:55px;
-
-  margin-bottom:30px;
+.welcome-flower {
+  font-size: clamp(32px, 8vw, 55px);
+  /* line-height: 1; */
+  margin-bottom: 30px;
 }
 
-.welcome-guest{
+.welcome-guest {
+  width: 100%;
+  max-width: 90%;
 
-  font-size:22px;
+  margin: 0;
 
-  color:#7A1E2C;
+  font-size: clamp(16px, 4vw, 22px);
+  line-height: 1.5;
 
-  letter-spacing:2px;
+  color: #7a1e2c;
+  letter-spacing: clamp(0.5px, 0.5vw, 2px);
+  overflow-wrap: break-word;
 }
 
-.welcome-title{
+/* You're Invited */
+.welcome-title {
+  width: 100%;
+  max-width: 700px;
+  margin: 15px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 10vw, 60px);
+  line-height: 1.05;
 
-  margin-top:15px;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:60px;
-
-  color:#7A1E2C;
+  color: #7a1e2c;
 }
 
-.welcome-message{
+/* Main message */
+.welcome-message {
+  width: 100%;
+  max-width: 650px;
 
-  margin-top:35px;
+  margin: 30px auto 0;
 
-  max-width:650px;
+  color: #666;
 
-  line-height:2;
-
-  color:#666;
-
-  font-size:20px;
+  font-size: clamp(16px, 4vw, 20px);
+  line-height: 1.8;
 }
 
-.welcome-footer{
+/* Footer */
+.welcome-footer {
+  width: 100%;
+  max-width: 600px;
 
-  margin-top:35px;
+  margin: 30px auto 0;
 
-  color:#A56C6C;
+  color: #a56c6c;
 
-  font-size:18px;
+  font-size: clamp(14px, 3.5vw, 18px);
+  line-height: 1.7;
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .welcome {
+    min-height: 100svh;
+    padding: 60px 18px;
+  }
+
+  .welcome-flower {
+    margin-bottom: 20px;
+  }
+
+  .welcome-guest {
+    max-width: 100%;
+    font-size: 20px;
+  }
+
+  .welcome-title {
+    margin-top: 12px;
+    font-size: 34px;
+  }
+
+  .welcome-message {
+    margin-top: 25px;
+    line-height: 1.7;
+  }
+
+  .welcome-footer {
+    margin-top: 25px;
+  }
 }

@@ -1,33 +1,72 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function RSVP() {
   const [form, setForm] = useState({
     name: "",
-    phone: "",
-    guests: 1,
-    meal: "Chicken",
+    guests: 0,
     message: "",
     attending: true,
   });
-
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // { type: "success" | "error", text: string }
+ 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
+ 
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
+      ...(name === "attending" && !checked ? { guests: 0 } : {}),
     }));
   };
-
-  const handleSubmit = (e) => {
+ 
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    alert("Thank you for your RSVP!");
+ 
+    setLoading(true);
+    setStatus(null);
+ 
+    try {
+      const response = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+ 
+      const result = await response.json();
+ 
+      if (!response.ok) {
+        throw new Error(result.message);
+      }
+ 
+      setStatus({
+        type: "success",
+        text: "Thank you — your RSVP has been received.",
+      });
+ 
+      setForm({
+        name: "",
+        guests: 0,
+        message: "",
+        attending: true,
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus({
+        type: "error",
+        text: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="rsvp">
+    <section className="rsvp" id="rsvp">
 
       <motion.h2
         initial={{ opacity: 0 }}
@@ -59,60 +98,16 @@ export default function RSVP() {
           required
         />
 
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-        />
-
         <select
           name="guests"
           value={form.guests}
           onChange={handleChange}
         >
+          <option>How many guests</option>
           {[1,2,3,4,5].map(n => (
             <option key={n}>{n}</option>
           ))}
         </select>
-
-        <div className="meal">
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Chicken"
-              checked={form.meal==="Chicken"}
-              onChange={handleChange}
-            />
-            Chicken
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Beef"
-              checked={form.meal==="Beef"}
-              onChange={handleChange}
-            />
-            Beef
-          </label>
-
-          <label>
-            <input
-              type="radio"
-              name="meal"
-              value="Vegetarian"
-              checked={form.meal==="Vegetarian"}
-              onChange={handleChange}
-            />
-            Vegetarian
-          </label>
-
-        </div>
 
         <textarea
           placeholder="Leave us a lovely message..."
@@ -134,9 +129,22 @@ export default function RSVP() {
 
         </label>
 
-        <button>
-          Confirm Attendance
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading
+            ? "Submitting..."
+            : "Confirm Attendance"}
         </button>
+
+        {status && (
+          <p
+            className={status.type === "success" ? "success" : "error"}
+          >
+            {status.text}
+          </p>
+        )}
 
       </form>
 

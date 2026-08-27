@@ -1,11 +1,12 @@
+import { getStorageData } from "@/hooks/Commom";
 import { motion } from "framer-motion";
 
 export default function Welcome({
-  guestName = "guest",
+  guestName = "",
   partnerName = "",
 }) {
-  const updatedGuestName = guestName || localStorage.getItem("name") || "guest";
-  const updatedPartnerName = partnerName || localStorage.getItem("partner") || "";
+  const updatedGuestName = guestName || getStorageData("name") || "";
+  const updatedPartnerName = partnerName || getStorageData("partner") || "";
   
   return (
     <section className="welcome" id="welcome">
@@ -22,15 +23,19 @@ export default function Welcome({
       </motion.div>
 
       {/* Guest Name */}
-      <motion.p
-        className="welcome-guest"
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: .2 }}
-      >
-        Dear {updatedGuestName} {updatedPartnerName && `& ${updatedPartnerName}`},
-      </motion.p>
+      {
+        updatedGuestName && (
+          <motion.p
+            className="welcome-guest"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: .2 }}
+          >
+            Dear {updatedGuestName}{updatedPartnerName && ` & ${updatedPartnerName}`},
+          </motion.p>
+        )
+      }
 
       {/* Title */}
       <motion.h2
@@ -51,16 +56,16 @@ export default function Welcome({
         viewport={{ once: true }}
         transition={{ delay: .6 }}
       >
-        Together with our families,
+        After all the miles, trips and memories,
         <br />
-        we joyfully invite you
+        we are finally tying the knot.
         <br />
-        to celebrate the beginning
+        We'd love to have you there
         <br />
-        of our forever.
+        on our special day.
       </motion.p>
 
-      <motion.p
+      {/* <motion.p
         className="welcome-footer"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -70,7 +75,7 @@ export default function Welcome({
         We would be honored to have you
         <br />
         with us on our special day.
-      </motion.p>
+      </motion.p> */}
 
     </section>
   );
