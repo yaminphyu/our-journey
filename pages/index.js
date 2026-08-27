@@ -56,7 +56,7 @@ export default function Home({
         <RSVP />
         <ThankYou />
 
-        <FloatingNav isSidebar={isSidebar} setIsSidebar={setIsSidebar} />
+        {/* <FloatingNav isSidebar={isSidebar} setIsSidebar={setIsSidebar} /> */}
 
         <AnimatePresence>
           {showScrollTop && (
