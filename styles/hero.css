@@ -33,10 +33,6 @@
       linear-gradient(rgba(255,248,242,.45),
       rgba(255,248,242,.45)),
       url("/images/image.png");
-      /* background:
-      linear-gradient(rgba(255,248,242,.45),
-      rgba(255,248,242,.45)),
-      url("/images/splash.png"); */
 
   background-size: cover;
   background-position: center;
