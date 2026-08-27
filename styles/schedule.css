@@ -3,6 +3,14 @@
   background: #fff8f2;
   padding: 120px 20px;
   overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
 .schedule h2 {

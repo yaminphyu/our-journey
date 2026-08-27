@@ -5,6 +5,14 @@
   padding: 100px 20px;
   text-align: center;
   overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
 .rsvp h2 {

@@ -1,7 +1,7 @@
 .floating-nav {
   position: fixed;
 
-  right: 20px;
+  right: max(16px, calc((100vw - 576px) / 2 + 16px));
   top: 30%;
 
   transform: translateY(-50%);

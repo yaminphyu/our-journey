@@ -5,6 +5,7 @@
   background:#FFF8F2;
 
   text-align:center;
+  min-height: 100vh;
 }
 
 .details h2{
