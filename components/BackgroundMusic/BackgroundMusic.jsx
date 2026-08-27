@@ -60,7 +60,7 @@ export default function BackgroundMusic({ play }) {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       >
-        <source src="/music/wedding.mp3" type="audio/mpeg" />
+        <source src="/music/our-wedding.mp3" type="audio/mpeg" />
       </audio>
 
       <div className="absolute left-1/2 top-1 z-50 flex w-[calc(100%-32px)] max-w-sm xl:max-w-lg -translate-x-1/2 items-center justify-between rounded-full border border-[#6B1F2B]/20 bg-[#FCF8F3]/95 px-3 py-2 shadow-[0_8px_30px_rgba(107,31,43,0.18)] backdrop-blur-md">
