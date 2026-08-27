@@ -7,6 +7,14 @@
   background: #fff8f2;
 
   overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
 .gallery-header {
