@@ -17,7 +17,8 @@ export default function Document() {
           rel="stylesheet"
         />
 
-        <link rel="preload" as="image" href="/images/splash.png" />
+        <link rel="preload" as="image" href="/images/image.png" />
+        <link rel="preload" as="audio" href="/music/wedding-song.mp3" />
       </Head>
 
       <body>
