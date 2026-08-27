@@ -41,37 +41,41 @@ export default function Home({
   };
 
   return (
-    <main className="mx-auto w-full max-w-lg xl:max-w-xl bg-[#FCF8F3]">
-      {/* <BackgroundMusic play={isOpen} /> */}
-      <Hero />
-      <Welcome guestName={guestName} partnerName={partnerName} />
-      <Countdown />
-      <OurStory />
-      <WeddingDetails />
-      <Gallery />
-      <Schedule />
-      <RSVP />
-      <ThankYou />
+    <main className="relative mx-auto w-full max-w-lg xl:max-w-xl bg-[#FCF8F3]">
+      <div className="fixed top-0 left-0 z-50 w-full h-auto bg-amber-300">
+        <BackgroundMusic play={isOpen} />
+      </div>
+      <div className="relative w-full">
+        <Hero />
+        <Welcome guestName={guestName} partnerName={partnerName} />
+        <Countdown />
+        <OurStory />
+        <WeddingDetails />
+        <Gallery />
+        <Schedule />
+        <RSVP />
+        <ThankYou />
 
-      <FloatingNav isSidebar={isSidebar} setIsSidebar={setIsSidebar} />
+        <FloatingNav isSidebar={isSidebar} setIsSidebar={setIsSidebar} />
 
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            type="button"
-            className="scroll-top-button"
-            onClick={scrollToTop}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Scroll to top"
-          >
-            ↑
-          </motion.button>
-        )}
-      </AnimatePresence>
+        <AnimatePresence>
+          {showScrollTop && (
+            <motion.button
+              type="button"
+              className="scroll-top-button"
+              onClick={scrollToTop}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Scroll to top"
+            >
+              ↑
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
     </main>
   );
 }
